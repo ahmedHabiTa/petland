@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pet_land/core/util/shared_prefs_helper.dart';
 
 import '../../../../../core/colors/colors.dart';
 import '../../../../../core/constant/constants.dart';
@@ -101,31 +102,34 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               },
                               child: currentIndex == 3
                                   ? GestureDetector(
-                                onTap: (){
-                                  Constants.navigateToRep(
-                                      routeName: const LoginCreateAccountScreen(),
-                                      context: context!);
-                                },
-                                    child: Container(
-                                width: 142.0.w,
-                                height: 50.0.h,
-                                decoration: BoxDecoration(
-                                    color: const Color(0xFF003473),
-                                    borderRadius:
-                                    BorderRadius.circular(8.0.r),
-                                ),
-                                child: Center(
-                                    child: Text(
-                                      'Get Started',
-                                      style: TextStyle(
-                                        fontSize: 15.0.sp,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
+                                      onTap: () async {
+                                        Constants.navigateToRep(
+                                            routeName:
+                                                const LoginCreateAccountScreen(),
+                                            context: context!);
+                                        await SharedPrefsHelper.saveData(
+                                            key: 'onBoard', value: true);
+                                      },
+                                      child: Container(
+                                        width: 142.0.w,
+                                        height: 50.0.h,
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xFF003473),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0.r),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Get Started',
+                                            style: TextStyle(
+                                              fontSize: 15.0.sp,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                ),
-                              ),
-                                  )
+                                    )
                                   : Container(
                                       width: 142.0.w,
                                       height: 50.0.h,
@@ -169,8 +173,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                       height: 50.0.h,
                                       decoration: BoxDecoration(
                                         border: Border.all(
-                                          color: const Color(0xFF2D9CBB)
-                                        ),
+                                            color: const Color(0xFF2D9CBB)),
                                         borderRadius:
                                             BorderRadius.circular(8.0.r),
                                       ),

@@ -72,7 +72,7 @@ class _CustomFormFieldState extends State<CustomFormField> {
       ),
       padding: const EdgeInsets.symmetric(vertical: 4),
       width: widget.width ?? MediaQuery.of(context).size.width * 0.9,
-      height: widget.height ?? MediaQuery.of(context).size.height * 0.1,
+    //  height: widget.height ?? MediaQuery.of(context).size.height * 0.1,
       child: TextFormField(
         readOnly: widget.readOnly ?? false,
         initialValue: widget.initialValue,
@@ -121,7 +121,7 @@ class _CustomFormFieldState extends State<CustomFormField> {
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(50),
             borderSide: BorderSide(
-              color: MyColors.meanColor,
+              color: Colors.red,
               width: 1,
             ),
           ),
