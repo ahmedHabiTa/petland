@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1096975130441",
+    "project_id": "petland-727ab",
+    "storage_bucket": "petland-727ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096975130441:android:c71fe32dc1dcd3dfbb4498",
+        "android_client_info": {
+          "package_name": "com.example.pet_land"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1096975130441-8613ip5u0t7tripkg8qv0p1u80s3vm39.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbzxbVzLYIPp3Ihr7iVfX00tV-_bcWc74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1096975130441-8613ip5u0t7tripkg8qv0p1u80s3vm39.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
