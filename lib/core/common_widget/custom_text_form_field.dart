@@ -67,7 +67,7 @@ class _CustomFormFieldState extends State<CustomFormField> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color:Colors.white,
+        color:widget.backgroundColor ?? Colors.white,
         borderRadius: BorderRadius.circular(20.r),
       ),
       padding: const EdgeInsets.symmetric(vertical: 4),

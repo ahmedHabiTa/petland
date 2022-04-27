@@ -6,7 +6,9 @@ import 'package:pet_land/core/common_widget/loading_widget.dart';
 import 'package:pet_land/features/auth/presentation/screens/login_create_acount_screen.dart';
 import 'package:pet_land/features/auth/providers/auth_provider.dart';
 import 'package:pet_land/features/home/presentation/home_screen.dart';
+import 'package:pet_land/features/home/presentation/tabs_screen.dart';
 import 'package:pet_land/features/on_boarding/presentation/screens/splash_screen.dart';
+import 'package:pet_land/features/shop/provider/shop_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'core/util/shared_prefs_helper.dart';
@@ -30,6 +32,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<AuthProvider>(
           create: (_) => AuthProvider(),
         ),
+        ChangeNotifierProvider<ShopProvider>(
+          create: (_) => ShopProvider(),
+        ),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 800),
@@ -44,7 +49,7 @@ class MyApp extends StatelessWidget {
                     }else if(snapshot.hasError){
                       return const Scaffold(body:  Center(child:Text('Something went wrong')));
                     }else if(snapshot.hasData){
-                      return const HomeScreen();
+                      return const TabsScreen();
                     }else{
                       return const LoginCreateAccountScreen();
                     }

@@ -2,6 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Constants {
+  static double width(context) {
+    return MediaQuery.of(context).size.width;
+  }
+
+  static double height(context) {
+    return MediaQuery.of(context).size.width;
+  }
+
   static void navigateToRep({
     required var routeName,
     required BuildContext context,
@@ -25,6 +33,7 @@ class Constants {
       ),
     );
   }
+
   static showToast({
     required String message,
     required Color color,

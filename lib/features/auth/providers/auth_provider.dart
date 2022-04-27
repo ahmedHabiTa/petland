@@ -5,7 +5,7 @@ import 'package:pet_land/core/util/shared_prefs_helper.dart';
 import 'package:pet_land/features/auth/presentation/screens/login_create_acount_screen.dart';
 
 import '../../../models/user_model.dart';
-import '../../home/presentation/home_screen.dart';
+import '../../home/presentation/tabs_screen.dart';
 
 class AuthProvider extends ChangeNotifier {
   UserModel? userModel;
@@ -19,7 +19,7 @@ class AuthProvider extends ChangeNotifier {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
 
-      Constants.navigateToRep(routeName: const HomeScreen(), context: context);
+      Constants.navigateToRep(routeName: const TabsScreen(), context: context);
     } on FirebaseAuthException catch (error) {
       Constants.showToast(
         message: error.message.toString(),
@@ -53,7 +53,7 @@ class AuthProvider extends ChangeNotifier {
             await SharedPrefsHelper.saveData(key: 'email', value: email);
 
       });
-      Constants.navigateToRep(routeName: const HomeScreen(), context: context);
+      Constants.navigateToRep(routeName: const TabsScreen(), context: context);
     } on FirebaseAuthException catch (error) {
       Constants.showToast(message: error.message.toString(), color: Colors.red);
     }
