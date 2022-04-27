@@ -31,8 +31,8 @@ class ShopHomeScreen extends StatelessWidget {
           builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Padding(
-                padding:  EdgeInsets.only(top: 80.0),
-                child:  LoadingWidget(),
+                padding: EdgeInsets.only(top: 80.0),
+                child: LoadingWidget(),
               );
             } else if (snapshot.hasError) {
               return const Center(
@@ -42,7 +42,13 @@ class ShopHomeScreen extends StatelessWidget {
                   fontSize: 30,
                 ),
               );
-            } else if (snapshot.hasData) {
+            }else if(!snapshot.hasData){
+              return const Padding(
+                padding: EdgeInsets.only(top: 80.0),
+                child: LoadingWidget(),
+              );
+            }
+            else if (snapshot.hasData) {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: Column(
@@ -88,10 +94,12 @@ class ShopHomeScreen extends StatelessWidget {
                       height: 175,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return  ShopItemWidget(
+                          return ShopItemWidget(
                             image: snapshot.data!.docs[index]['image'],
                             name: snapshot.data!.docs[index]['name'],
                             price: snapshot.data!.docs[index]['price'],
+                            description: snapshot.data!.docs[index]
+                                ['description'],
                           );
                         },
                         itemCount: snapshot.data!.docs.length,
@@ -112,10 +120,12 @@ class ShopHomeScreen extends StatelessWidget {
                       height: 175,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return  ShopItemWidget(
+                          return ShopItemWidget(
                             image: snapshot.data!.docs[index]['image'],
                             name: snapshot.data!.docs[index]['name'],
                             price: snapshot.data!.docs[index]['price'],
+                            description: snapshot.data!.docs[index]
+                                ['description'],
                           );
                         },
                         itemCount: snapshot.data!.docs.length,

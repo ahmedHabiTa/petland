@@ -4,6 +4,7 @@ import 'package:pet_land/core/constant/constants.dart';
 
 import '../../../core/colors/colors.dart';
 import '../../../core/common_widget/custom_text.dart';
+import 'add_new_address.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -251,7 +252,10 @@ class CartScreen extends StatelessWidget {
                   height: 60,
                   width: Constants.width(context) * 0.8,
                   color: MyColors.meanColor,
-                  onTap: (){},
+                  onTap: () {
+                    Constants.navigateTo(
+                        routeName:const AddNewAddress(), context: context);
+                  },
                   child: const Center(
                     child: CustomText(
                       text: 'Add a new Address',

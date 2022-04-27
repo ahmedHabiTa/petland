@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_land/core/colors/colors.dart';
+import 'package:pet_land/features/shop/presentation/pet_food_screen.dart';
 
 import '../../../core/common_widget/custom_text.dart';
 import '../../../core/constant/constants.dart';
@@ -32,7 +33,11 @@ class CategoryScreen extends StatelessWidget {
                     height: Constants.height(context) * 0.28,
                     width: Constants.height(context) * 0.25,
                     title: 'Pet Food',
-                    onTap: () {},
+                    onTap: () {
+                      Constants.navigateTo(
+                          routeName:const PetFoodScreen(title: 'Pet Food'),
+                          context: context);
+                    },
                     image: 'assets/images/Barbershop.png',
                     color: const Color(0xFFFF9A9E),
                   ),
@@ -55,7 +60,11 @@ class CategoryScreen extends StatelessWidget {
                     height: Constants.height(context) * 0.3,
                     width: Constants.height(context) * 0.3,
                     title: 'Litter Sand',
-                    onTap: () {},
+                    onTap: () {
+                      Constants.navigateTo(
+                          routeName:const PetFoodScreen(title: 'Litter & Supplies'),
+                          context: context);
+                    },
                     image: 'assets/images/Barbershop.png',
                     color: const Color(0xFFFF9A9E),
                   ),
@@ -102,7 +111,11 @@ class CategoryScreen extends StatelessWidget {
                     height: Constants.height(context) * 0.3,
                     width: Constants.height(context) * 0.4,
                     title: 'Pet Accessories',
-                    onTap: () {},
+                    onTap: () {
+                      Constants.navigateTo(
+                          routeName:const PetFoodScreen(title: 'Pet Accessories'),
+                          context: context);
+                    },
                     image: 'assets/images/Barbershop.png',
                     color: const Color(0xFFFF9A9E),
                   ),
@@ -111,7 +124,10 @@ class CategoryScreen extends StatelessWidget {
                     height: Constants.height(context) * 0.3,
                     width: Constants.height(context) * 0.4,
                     title: 'Pet Health Care',
-                    onTap: () {},
+                    onTap: () {
+                      Constants.navigateTo(
+                          routeName:const PetFoodScreen(title: 'Health & Beauty Care'),
+                          context: context);},
                     image: 'assets/images/Comments.png',
                     color: const Color(0xFFA455CA),
                   ),
