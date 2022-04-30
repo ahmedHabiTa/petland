@@ -4,6 +4,7 @@ import 'package:pet_land/core/common_widget/custom_text.dart';
 import 'package:pet_land/core/common_widget/custom_wide_container.dart';
 import 'package:pet_land/core/constant/constants.dart';
 import 'package:pet_land/features/auth/presentation/screens/Login_screen.dart';
+import 'package:pet_land/features/auth/presentation/screens/User_or_admin_login.dart';
 
 import 'create_account_screen.dart';
 
@@ -50,7 +51,7 @@ class LoginCreateAccountScreen extends StatelessWidget {
               textColor: Colors.white,
               onTap: () {
                 Constants.navigateTo(
-                    routeName: const LoginScreen(), context: context);
+                    routeName: const UserOrAdminLogin(), context: context);
               },
             ),
             const SizedBox(height: 50),

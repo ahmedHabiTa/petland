@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/common_widget/custom_wide_container.dart';
 import '../../../../core/constant/constants.dart';
+import '../../../admin/presentation/shop_admin_home_page.dart';
 import 'Login_screen.dart';
 
 class UserOrAdminLogin extends StatelessWidget {
@@ -47,7 +48,9 @@ class UserOrAdminLogin extends StatelessWidget {
               width: 320.w,
               containerColor: const Color(0xFF003473),
               textColor: Colors.white,
-              onTap: () {},
+              onTap: () {
+                Constants.navigateTo(routeName:const ShopAdminHomePage(), context: context);
+              },
             ),
           ],
         ),

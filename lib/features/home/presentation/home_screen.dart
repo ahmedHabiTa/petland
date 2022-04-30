@@ -5,6 +5,9 @@ import 'package:pet_land/core/common_widget/custom_text.dart';
 import 'package:pet_land/core/constant/constants.dart';
 import 'package:pet_land/core/util/shared_prefs_helper.dart';
 import 'package:pet_land/features/shop/presentation/shop_tabs_screen.dart';
+import 'package:provider/provider.dart';
+
+import '../../auth/providers/auth_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -260,7 +263,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ],
-              )
+              ),
               // Consumer<AuthProvider>(
               //   builder: (context, authProvider, _) {
               //     return Center(
